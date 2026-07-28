@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
+/*
+ * Rebrand entry point: change the six --brand-* values below (and the
+ * font names in layout.tsx) to reskin this whole site for a new brand.
+ * Every component consumes color via the Tailwind tokens generated here
+ * (bg-brand-primary, text-brand-dark, etc.) — none hardcode hex values.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffaf3;
+  --foreground: #241534;
+
+  --brand-primary: #ff3d7f;
+  --brand-secondary: #ff9f1c;
+  --brand-accent: #7ed957;
+  --brand-dark: #241534;
+  --brand-cream: #fffaf3;
+  --brand-ink: #4a3b5c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-ink: var(--brand-ink);
+
+  --font-display: var(--font-baloo);
+  --font-sans: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
