@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/content";
 
 export function Flavors() {
@@ -16,10 +17,22 @@ export function Flavors() {
             className="group overflow-hidden rounded-3xl text-center shadow-sm ring-1 ring-brand-dark/5 transition-transform hover:-translate-y-1 hover:shadow-md"
             style={{ backgroundColor: flavor.bgColorTop }}
           >
-            <div
-              className="h-56 w-full transition-transform group-hover:scale-105"
-              style={{ backgroundColor: flavor.bgColorTop }}
-            />
+            <div className="relative h-56 w-full">
+              {flavor.image ? (
+                <Image
+                  src={flavor.image}
+                  alt={`Popy ${flavor.name}`}
+                  fill
+                  className="object-cover object-center transition-transform group-hover:scale-105"
+                  sizes="(max-width: 640px) 45vw, 280px"
+                />
+              ) : (
+                <div
+                  className="h-full w-full transition-transform group-hover:scale-105"
+                  style={{ backgroundColor: flavor.bgColorTop }}
+                />
+              )}
+            </div>
             <div className="bg-white p-5">
               <h3 className="font-display text-lg text-brand-dark">{flavor.name}</h3>
               <p className="mt-2 text-sm text-brand-ink">{flavor.description}</p>

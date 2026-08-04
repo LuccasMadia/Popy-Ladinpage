@@ -18,11 +18,12 @@ export const siteConfig = {
   },
 
   // Each flavor drives both the hero spotlight and the flavors grid below.
-  // bgColorTop/bgColorBottom paint the gradient/swatch standing in for the
-  // (currently absent) product photo.
+  // bgColorTop/bgColorBottom paint the gradient/swatch standing in for
+  // flavors that don't have a product photo (`image`) yet.
   flavors: [
     {
       name: "Laranja",
+      image: "/flavors/laranja.png",
       bgColorTop: "#AA2B00",
       bgColorBottom: "#D75401",
       description: "Suco de laranja 100% natural",
