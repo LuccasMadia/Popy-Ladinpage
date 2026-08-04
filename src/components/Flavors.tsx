@@ -15,14 +15,14 @@ export function Flavors() {
           <div
             key={flavor.name}
             className="group overflow-hidden rounded-3xl text-center shadow-sm ring-1 ring-brand-dark/5 transition-transform hover:-translate-y-1 hover:shadow-md"
-            style={{ backgroundColor: flavor.bgColor }}
+            style={{ backgroundColor: flavor.bgColorTop }}
           >
             <div className="relative h-56 w-full">
               <Image
                 src={flavor.image}
                 alt={`Popy ${flavor.name}`}
                 fill
-                className="object-cover object-top transition-transform group-hover:scale-105"
+                className="object-cover object-center transition-transform group-hover:scale-105"
                 sizes="(max-width: 640px) 45vw, 280px"
               />
             </div>

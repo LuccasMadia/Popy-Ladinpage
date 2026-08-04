@@ -10,7 +10,7 @@ export function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-30">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 md:px-10 md:py-6">
-        <a href="#" className="font-display text-lg text-white sm:text-xl">
+        <a href="#" className="font-logo text-xl text-white sm:text-2xl">
           {siteConfig.brand}
         </a>
 

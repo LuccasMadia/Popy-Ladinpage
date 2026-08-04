@@ -1,7 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { Flavors } from "@/components/Flavors";
 import { Features } from "@/components/Features";
-import { Testimonials } from "@/components/Testimonials";
+import { Partners } from "@/components/Partners";
 import { CtaBanner } from "@/components/CtaBanner";
 import { Footer } from "@/components/Footer";
 
@@ -12,7 +12,7 @@ export default function Home() {
         <Hero />
         <Flavors />
         <Features />
-        <Testimonials />
+        <Partners />
         <CtaBanner />
       </main>
       <Footer />

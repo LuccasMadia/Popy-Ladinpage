@@ -17,17 +17,23 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex min-h-screen min-h-[100svh] flex-col overflow-hidden transition-colors duration-700"
-      style={{ backgroundColor: flavor.bgColor }}
+      className="relative flex min-h-screen min-h-[100svh] flex-col overflow-hidden"
+      style={{
+        background: `linear-gradient(to bottom, ${flavor.bgColorTop}, ${flavor.bgColorBottom})`,
+      }}
     >
-      {/* Product photo as a full-bleed background covering the entire section */}
+      {/* Product photo as background. On tall phone screens object-cover would crop
+          the wide flavor-name text baked into the photo, so below the sm breakpoint
+          we show the full image letterboxed by a gradient matching the photo's own
+          top/bottom edge colors (sampled from the photo, not guessed) so the seam
+          blends in. From sm up we go full-bleed cover, where cropping is minor. */}
       <Image
         key={flavor.image}
         src={flavor.image}
         alt={`Popy ${flavor.name}`}
         fill
         priority
-        className="object-cover"
+        className="object-contain sm:object-cover"
         sizes="100vw"
       />
 

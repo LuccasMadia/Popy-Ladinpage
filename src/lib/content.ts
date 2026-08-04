@@ -9,7 +9,7 @@ export const siteConfig = {
   nav: [
     { label: "Sabores", href: "#sabores" },
     { label: "Por que Popy", href: "#beneficios" },
-    { label: "Depoimentos", href: "#depoimentos" },
+    { label: "Parceiros", href: "#parceiros" },
   ],
 
   hero: {
@@ -18,20 +18,39 @@ export const siteConfig = {
   },
 
   // Each flavor drives both the hero spotlight and the flavors grid below.
-  // bgColor is a fallback shown while `image` loads (and behind the Flavors
-  // grid thumbnail), so keep it close to the photo's dominant tone.
+  // bgColorTop/bgColorBottom are sampled from the actual top/bottom edge
+  // pixels of `image` (the photo has an internal gradient, so a single flat
+  // color never matches both edges). The Hero paints a matching gradient
+  // behind the photo so the letterbox edges on tall screens blend in;
+  // bgColorTop alone is used as the flat fallback in the Flavors grid.
   flavors: [
     {
       name: "Laranja",
       image: "/flavors/laranja.png",
-      bgColor: "#F2900C",
+      bgColorTop: "#AA2B00",
+      bgColorBottom: "#D75401",
       description: "Suco de laranja 100% natural",
     },
     {
       name: "Acerola",
       image: "/flavors/acerola.png",
-      bgColor: "#C31F27",
-      description: "Suco de acerola 100% natural.",
+      bgColorTop: "#6C0201",
+      bgColorBottom: "#940201",
+      description: "Suco de acerola 100% natural",
+    },
+    {
+      name: "Laranja com Acerola",
+      image: "/flavors/laranja-acerola.png",
+      bgColorTop: "#CE3000",
+      bgColorBottom: "#E94201",
+      description: "Suco de laranja com acerola 100% natural",
+    },
+    {
+      name: "Abacaxi com Hortelã",
+      image: "/flavors/abacaxi-hortela.png",
+      bgColorTop: "#2C4C01",
+      bgColorBottom: "#879302",
+      description: "Suco de abacaxi com hortelã 100% natural",
     },
   ],
 
@@ -56,24 +75,12 @@ export const siteConfig = {
     },
   ],
 
-  testimonials: [
-    {
-      quote:
-        "Trocamos os sucos de caixinha do escritório pela Popy e ninguém sentiu falta do açúcar de antes.",
-      name: "Marina Alves",
-      role: "Gerente de RH",
-    },
-    {
-      quote: "O suco de laranja é o mais equilibrado que já experimentei nessa categoria.",
-      name: "Diego Ferreira",
-      role: "Cliente desde 2024",
-    },
-    {
-      quote:
-        "Rótulo, sabor, tudo combina. Virou item fixo da geladeira aqui de casa.",
-      name: "Bia Nogueira",
-      role: "Assinante do clube Popy",
-    },
+  // Placeholder names until we have real partner/reseller logos to swap in.
+  partners: [
+    { name: "Parceiro 1" },
+    { name: "Parceiro 2" },
+    { name: "Parceiro 3" },
+    { name: "Parceiro 4" },
   ],
 
   cta: {
@@ -84,7 +91,7 @@ export const siteConfig = {
 
   footer: {
     description:
-      "Suco 100% natural de fruta. Feito para quem quer um suco natutal e refrescante sem excesso de açúcar.",
+    "Suco 100% natural de fruta. Feito para quem quer um suco natutal e refrescante sem excesso de açúcar.",
     columns: [
       {
         title: "Produto",

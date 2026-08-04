@@ -10,12 +10,12 @@
   --background: #fffaf3;
   --foreground: #241534;
 
-  --brand-primary: #ff3d7f;
-  --brand-secondary: #ff9f1c;
-  --brand-accent: #7ed957;
-  --brand-dark: #241534;
+  --brand-primary: #f2760c;
+  --brand-secondary: #d9480f;
+  --brand-accent: #14a44d;
+  --brand-dark: #241f1a;
   --brand-cream: #fffaf3;
-  --brand-ink: #4a3b5c;
+  --brand-ink: #4a4038;
 }
 
 @theme inline {
@@ -31,6 +31,7 @@
 
   --font-display: var(--font-baloo);
   --font-sans: var(--font-inter);
+  --font-logo: "Milkshake", cursive;
 }
 
 body {
