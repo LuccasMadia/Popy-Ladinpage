@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { siteConfig } from "@/lib/content";
 import { Header } from "@/components/Header";
 import { ChevronIcon, ArrowDownIcon } from "@/components/icons";
@@ -22,21 +21,6 @@ export function Hero() {
         background: `linear-gradient(to bottom, ${flavor.bgColorTop}, ${flavor.bgColorBottom})`,
       }}
     >
-      {/* Product photo as background. On tall phone screens object-cover would crop
-          the wide flavor-name text baked into the photo, so below the sm breakpoint
-          we show the full image letterboxed by a gradient matching the photo's own
-          top/bottom edge colors (sampled from the photo, not guessed) so the seam
-          blends in. From sm up we go full-bleed cover, where cropping is minor. */}
-      <Image
-        key={flavor.image}
-        src={flavor.image}
-        alt={`Popy ${flavor.name}`}
-        fill
-        priority
-        className="object-contain sm:object-cover"
-        sizes="100vw"
-      />
-
       <Header />
 
       {/* Legibility scrims — sit above the photo, below the overlaid content */}

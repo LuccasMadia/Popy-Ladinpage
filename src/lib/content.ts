@@ -18,36 +18,29 @@ export const siteConfig = {
   },
 
   // Each flavor drives both the hero spotlight and the flavors grid below.
-  // bgColorTop/bgColorBottom are sampled from the actual top/bottom edge
-  // pixels of `image` (the photo has an internal gradient, so a single flat
-  // color never matches both edges). The Hero paints a matching gradient
-  // behind the photo so the letterbox edges on tall screens blend in;
-  // bgColorTop alone is used as the flat fallback in the Flavors grid.
+  // bgColorTop/bgColorBottom paint the gradient/swatch standing in for the
+  // (currently absent) product photo.
   flavors: [
     {
       name: "Laranja",
-      image: "/flavors/laranja.png",
       bgColorTop: "#AA2B00",
       bgColorBottom: "#D75401",
       description: "Suco de laranja 100% natural",
     },
     {
       name: "Acerola",
-      image: "/flavors/acerola.png",
       bgColorTop: "#6C0201",
       bgColorBottom: "#940201",
       description: "Suco de acerola 100% natural",
     },
     {
       name: "Laranja com Acerola",
-      image: "/flavors/laranja-acerola.png",
       bgColorTop: "#CE3000",
       bgColorBottom: "#E94201",
       description: "Suco de laranja com acerola 100% natural",
     },
     {
       name: "Abacaxi com Hortelã",
-      image: "/flavors/abacaxi-hortela.png",
       bgColorTop: "#2C4C01",
       bgColorBottom: "#879302",
       description: "Suco de abacaxi com hortelã 100% natural",
