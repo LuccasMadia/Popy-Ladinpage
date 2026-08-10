@@ -22,25 +22,22 @@ export const siteConfig = {
   // flavors that don't have a product photo (`image`) yet.
   flavors: [
     {
-      name: "Laranja",
-      bgColorTop: "#AA2B00",
-      bgColorBottom: "#D75401",
-      description: "Suco de laranja 100% natural",
-    },
-    {
       name: "Acerola",
+      image: "/assets/acerola.png",
       bgColorTop: "#6C0201",
       bgColorBottom: "#940201",
       description: "Suco de acerola 100% natural",
     },
     {
       name: "Laranja com Acerola",
+      image: "/assets/laranja-com-acerola.png",
       bgColorTop: "#CE3000",
       bgColorBottom: "#E94201",
       description: "Suco de laranja com acerola 100% natural",
     },
     {
       name: "Abacaxi com Hortelã",
+      image: "/assets/abacaxi-com-hortela.png",
       bgColorTop: "#2C4C01",
       bgColorBottom: "#879302",
       description: "Suco de abacaxi com hortelã 100% natural",

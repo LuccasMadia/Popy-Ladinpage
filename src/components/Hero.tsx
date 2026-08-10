@@ -22,12 +22,9 @@ export function Hero() {
         background: `linear-gradient(to bottom, ${flavor.bgColorTop}, ${flavor.bgColorBottom})`,
       }}
     >
-      {/* Product photo as background, when the flavor has one. On tall phone
-          screens object-cover would crop the wide flavor-name text baked
-          into the photo, so below the sm breakpoint we show the full image
-          letterboxed by the gradient above (sampled from the photo's own
-          top/bottom edge colors) so the seam blends in. From sm up we go
-          full-bleed cover, where cropping is minor. */}
+      {/* Product photo as background, when the flavor has one. Photos are
+          shot at the iPhone SE viewport ratio, so a full-bleed cover fills
+          the screen edge-to-edge with negligible cropping. */}
       {flavor.image && (
         <Image
           key={flavor.image}
@@ -35,7 +32,7 @@ export function Hero() {
           alt={`Popy ${flavor.name}`}
           fill
           priority
-          className="object-contain sm:object-cover"
+          className="object-cover"
           sizes="100vw"
         />
       )}
