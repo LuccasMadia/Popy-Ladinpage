@@ -23,7 +23,6 @@ export const siteConfig = {
   flavors: [
     {
       name: "Laranja",
-      image: "/flavors/laranja.png",
       bgColorTop: "#AA2B00",
       bgColorBottom: "#D75401",
       description: "Suco de laranja 100% natural",
