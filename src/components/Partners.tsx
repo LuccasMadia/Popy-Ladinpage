@@ -1,23 +1,20 @@
-import { siteConfig } from "@/lib/content";
+import { testimonials } from "@/lib/content";
 
 export function Partners() {
   return (
-    <section id="parceiros" className="mx-auto max-w-6xl px-6 py-20">
-      <div className="mx-auto max-w-xl text-center">
-        <h2 className="font-display text-3xl text-brand-dark sm:text-4xl">
-          Nossos parceiros e revendedores
-        </h2>
-      </div>
-
-      <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
-        {siteConfig.partners.map((partner) => (
-          <div
-            key={partner.name}
-            className="flex h-24 items-center justify-center rounded-2xl bg-white px-4 text-center ring-1 ring-brand-dark/5"
-          >
-            <span className="font-display text-brand-ink/60">{partner.name}</span>
-          </div>
-        ))}
+    <section id="parceiros" className="px-6 py-24">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="text-center font-serif text-4xl text-ink">Quem já é parceiro</h2>
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
+          {testimonials.map((item) => (
+            <blockquote key={item.id} className="rounded-2xl border border-ink/10 p-8">
+              <p className="italic text-ink/80">&ldquo;{item.quote}&rdquo;</p>
+              <footer className="mt-4 text-sm text-ink/60">
+                {item.author} — {item.business}
+              </footer>
+            </blockquote>
+          ))}
+        </div>
       </div>
     </section>
   );
