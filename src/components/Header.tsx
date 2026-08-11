@@ -1,65 +1,35 @@
-"use client";
-
-import { useState } from "react";
-import { siteConfig } from "@/lib/content";
-import { UserIcon, BagIcon, MenuIcon, CloseIcon } from "@/components/icons";
+const navLinks = [
+  { href: "#sabores", label: "Sabores" },
+  { href: "#por-que-popy", label: "Por que Popy" },
+  { href: "#parceiros", label: "Parceiros" },
+  { href: "#como-funciona", label: "Como funciona" },
+];
 
 export function Header() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header className="absolute inset-x-0 top-0 z-30">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6 md:px-10 md:py-6">
-        <a href="#" className="font-logo text-xl text-white sm:text-2xl">
-          {siteConfig.brand}
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-cream/90 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#top" className="font-serif text-2xl text-terracotta">
+          Popy
         </a>
-
-        <nav className="hidden items-center gap-8 md:flex">
-          {siteConfig.nav.map((item) => (
+        <nav className="hidden gap-8 text-sm text-ink/80 md:flex">
+          {navLinks.map((link) => (
             <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-white/85 transition-colors hover:text-white"
+              key={link.href}
+              href={link.href}
+              className="transition-colors hover:text-terracotta"
             >
-              {item.label}
+              {link.label}
             </a>
           ))}
         </nav>
-
-        <div className="flex items-center gap-4 text-white">
-          <UserIcon className="hidden h-5 w-5 sm:block" />
-          <div className="relative">
-            <BagIcon className="h-5 w-5" />
-            <span className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-brand-secondary text-[10px] font-semibold text-white">
-              2
-            </span>
-          </div>
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={open}
-            className="ml-1 md:hidden"
-          >
-            {open ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
-          </button>
-        </div>
+        <a
+          href="#contato"
+          className="rounded-full bg-terracotta px-5 py-2 text-sm font-medium text-cream transition-colors hover:bg-terracotta/90"
+        >
+          Seja um parceiro
+        </a>
       </div>
-
-      {open && (
-        <nav className="mx-4 mt-1 flex flex-col gap-1 rounded-2xl bg-brand-dark/90 p-4 backdrop-blur md:hidden">
-          {siteConfig.nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/90 transition-colors hover:bg-white/10"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-      )}
     </header>
   );
 }
