@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Baloo_2, Inter } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const baloo = Baloo_2({
+  variable: "--font-baloo",
   subsets: ["latin"],
 });
 
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      className={`${baloo.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-cream text-ink">
         {children}

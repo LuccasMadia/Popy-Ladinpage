@@ -2,6 +2,8 @@ export interface Flavor {
   id: string;
   name: string;
   color: string;
+  colorSoft: string;
+  image: string;
   description: string;
 }
 
@@ -29,21 +31,27 @@ export const flavors: Flavor[] = [
   {
     id: "acerola",
     name: "Acerola",
-    color: "#B4432E",
+    color: "#D81E2C",
+    colorSoft: "#7A0E14",
+    image: "/images/acerola.webp",
     description:
       "Suco puro de acerola, rico em vitamina C, com aquele azedinho que refresca na hora.",
   },
   {
     id: "laranja-com-acerola",
     name: "Laranja com Acerola",
-    color: "#E2932F",
+    color: "#F2711C",
+    colorSoft: "#D81E2C",
+    image: "/images/laranja-acerola.webp",
     description:
       "A doçura da laranja equilibrada pela acidez da acerola — o queridinho dos clientes.",
   },
   {
     id: "abacaxi-com-hortela",
     name: "Abacaxi com Hortelã",
-    color: "#8FA85E",
+    color: "#8BC53F",
+    colorSoft: "#1F6D3A",
+    image: "/images/abacaxi-hortela.webp",
     description:
       "Abacaxi maduro com um toque de hortelã fresca, leve e perfeito para dias quentes.",
   },

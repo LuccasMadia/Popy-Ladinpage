@@ -1,6 +1,9 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useRef, useState, type FormEvent } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useScrollReveal } from "@/lib/useScrollReveal";
 
 interface FormValues {
   nome: string;
@@ -41,6 +44,22 @@ export function ContactForm() {
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const scope = useScrollReveal<HTMLElement>();
+  const successRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!submitted) return;
+      gsap.from(successRef.current, {
+        opacity: 0,
+        y: 20,
+        scale: 0.96,
+        duration: 0.7,
+        ease: "power3.out",
+      });
+    },
+    { dependencies: [submitted] },
+  );
 
   function handleChange(field: keyof FormValues, value: string) {
     setValues((prev) => ({ ...prev, [field]: value }));
@@ -57,9 +76,12 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <section id="contato" className="px-6 py-24">
-        <div className="mx-auto max-w-xl rounded-2xl bg-olive/10 p-10 text-center">
-          <h2 className="font-serif text-3xl text-ink">Recebemos seu contato!</h2>
+      <section id="contato" className="bg-popy-green/10 px-6 py-24">
+        <div
+          ref={successRef}
+          className="mx-auto max-w-xl rounded-2xl bg-cream p-10 text-center shadow-sm"
+        >
+          <h2 className="font-display text-3xl text-popy-green">Recebemos seu contato!</h2>
           <p className="mt-3 text-ink/70">
             Em breve nossa equipe vai falar com você sobre a parceria Popy.
           </p>
@@ -69,14 +91,24 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contato" className="px-6 py-24">
+    <section id="contato" ref={scope} className="bg-popy-green/10 px-6 py-24">
       <div className="mx-auto max-w-xl">
-        <h2 className="text-center font-serif text-4xl text-ink">Seja um parceiro</h2>
-        <p className="mt-3 text-center text-ink/70">
+        <h2
+          data-reveal
+          className="text-center font-display text-4xl text-ink md:text-5xl"
+        >
+          Seja um parceiro
+        </h2>
+        <p data-reveal className="mt-3 text-center text-ink/70">
           Preencha seus dados e nossa equipe entra em contato para falar sobre a
           parceria.
         </p>
-        <form onSubmit={handleSubmit} noValidate className="mt-10 space-y-5">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          data-reveal-stagger
+          className="mt-10 space-y-5"
+        >
           <div>
             <label htmlFor="nome" className="block text-sm font-medium text-ink">
               Nome
@@ -86,7 +118,7 @@ export function ContactForm() {
               type="text"
               value={values.nome}
               onChange={(e) => handleChange("nome", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-4 py-2 text-ink focus:border-terracotta focus:outline-none"
+              className="mt-1 w-full rounded-lg border border-ink/20 bg-white px-4 py-2 text-ink focus:border-popy-green focus:outline-none"
             />
             {errors.nome && <p className="mt-1 text-sm text-red-700">{errors.nome}</p>}
           </div>
@@ -99,7 +131,7 @@ export function ContactForm() {
               type="text"
               value={values.empresa}
               onChange={(e) => handleChange("empresa", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-4 py-2 text-ink focus:border-terracotta focus:outline-none"
+              className="mt-1 w-full rounded-lg border border-ink/20 bg-white px-4 py-2 text-ink focus:border-popy-green focus:outline-none"
             />
             {errors.empresa && (
               <p className="mt-1 text-sm text-red-700">{errors.empresa}</p>
@@ -118,7 +150,7 @@ export function ContactForm() {
               placeholder="Ex: mercado, conveniência, cafeteria"
               value={values.tipoEstabelecimento}
               onChange={(e) => handleChange("tipoEstabelecimento", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-4 py-2 text-ink focus:border-terracotta focus:outline-none"
+              className="mt-1 w-full rounded-lg border border-ink/20 bg-white px-4 py-2 text-ink focus:border-popy-green focus:outline-none"
             />
           </div>
           <div>
@@ -131,7 +163,7 @@ export function ContactForm() {
               placeholder="(11) 91234-5678"
               value={values.telefone}
               onChange={(e) => handleChange("telefone", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-4 py-2 text-ink focus:border-terracotta focus:outline-none"
+              className="mt-1 w-full rounded-lg border border-ink/20 bg-white px-4 py-2 text-ink focus:border-popy-green focus:outline-none"
             />
             {errors.telefone && (
               <p className="mt-1 text-sm text-red-700">{errors.telefone}</p>
@@ -146,7 +178,7 @@ export function ContactForm() {
               type="text"
               value={values.cidade}
               onChange={(e) => handleChange("cidade", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-4 py-2 text-ink focus:border-terracotta focus:outline-none"
+              className="mt-1 w-full rounded-lg border border-ink/20 bg-white px-4 py-2 text-ink focus:border-popy-green focus:outline-none"
             />
             {errors.cidade && (
               <p className="mt-1 text-sm text-red-700">{errors.cidade}</p>
@@ -161,12 +193,12 @@ export function ContactForm() {
               rows={4}
               value={values.mensagem}
               onChange={(e) => handleChange("mensagem", e.target.value)}
-              className="mt-1 w-full rounded-lg border border-ink/20 bg-cream px-4 py-2 text-ink focus:border-terracotta focus:outline-none"
+              className="mt-1 w-full rounded-lg border border-ink/20 bg-white px-4 py-2 text-ink focus:border-popy-green focus:outline-none"
             />
           </div>
           <button
             type="submit"
-            className="w-full rounded-full bg-terracotta px-6 py-3 font-medium text-cream transition-colors hover:bg-terracotta/90"
+            className="w-full rounded-full bg-popy-red px-6 py-3 font-semibold text-cream transition-colors hover:bg-popy-red-dark"
           >
             Enviar contato
           </button>
