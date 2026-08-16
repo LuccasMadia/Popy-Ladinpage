@@ -57,6 +57,8 @@ export const flavors: Flavor[] = [
   },
 ];
 
+export const sizes = ["300ml", "450ml", "900ml", "1700ml"];
+
 export const differentiators: Differentiator[] = [
   {
     id: "natural",
