@@ -57,7 +57,7 @@ html::-webkit-scrollbar {
   font-family: var(--font-lobster), cursive;
   font-size: 32px;
   font-weight: 400;
-  color: #f5681e;
+  color: #fff8ea;
   letter-spacing: -1px;
   line-height: 0.9;
   transform: skewX(-5deg);
