@@ -43,12 +43,11 @@ export function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
-    function startPlayback() {
-      video?.play().catch(() => {});
-    }
+    const timer = setTimeout(() => {
+      video.play().catch(() => {});
+    }, 3000);
 
-    window.addEventListener("scroll", startPlayback, { once: true, passive: true });
-    return () => window.removeEventListener("scroll", startPlayback);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
