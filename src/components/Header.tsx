@@ -11,7 +11,7 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <a
           href="#top"
-          className="rounded-full bg-popy-green px-4 py-1.5 font-display text-2xl text-cream"
+          className="logo-popy rounded-full bg-popy-green px-4 py-1.5"
         >
           Popy
         </a>
