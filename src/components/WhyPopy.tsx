@@ -50,22 +50,22 @@ export function WhyPopy() {
           {
             opacity: 1,
             scaleX: 1,
-            duration: 0.25,
+            duration: 0.35,
             ease: "power2.out",
             transformOrigin: "left",
           },
-          index * 0.2,
+          index * 0.28,
         ).fromTo(
           bubble,
           { opacity: 0, scaleY: 0 },
           {
             opacity: 1,
             scaleY: 1,
-            duration: 0.45,
+            duration: 0.6,
             ease: "power3.out",
             transformOrigin: "top",
           },
-          "-=0.1",
+          "-=0.15",
         );
       });
     },
