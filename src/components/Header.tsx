@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const navLinks = [
   { href: "#sabores", label: "Sabores" },
   { href: "#por-que-popy", label: "Por que Popy" },
@@ -9,11 +11,14 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-ink/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <a
-          href="#top"
-          className="logo-popy rounded-full bg-popy-green px-4 py-1.5"
-        >
-          Popy
+        <a href="#top">
+          <Image
+            src="/images/popy-logo.png"
+            alt="Popy Sucos"
+            width={176}
+            height={88}
+            className="h-11 w-auto"
+          />
         </a>
         <nav className="hidden gap-8 text-sm font-medium text-cream/80 md:flex">
           {navLinks.map((link) => (

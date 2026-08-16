@@ -52,13 +52,3 @@ html::-webkit-scrollbar {
 .animate-logo-loop:hover {
   animation-play-state: paused;
 }
-
-.logo-popy {
-  font-family: var(--font-lobster), cursive;
-  font-size: 32px;
-  font-weight: 400;
-  color: #fff8ea;
-  letter-spacing: -1px;
-  line-height: 0.9;
-  transform: skewX(-5deg);
-}

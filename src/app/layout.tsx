@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Baloo_2, Inter, Lobster } from "next/font/google";
+import { Baloo_2, Inter } from "next/font/google";
 import "./globals.css";
 
 const baloo = Baloo_2({
@@ -9,12 +9,6 @@ const baloo = Baloo_2({
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const lobster = Lobster({
-  variable: "--font-lobster",
-  weight: "400",
   subsets: ["latin"],
 });
 
@@ -28,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${baloo.variable} ${inter.variable} ${lobster.variable} h-full antialiased`}
+      className={`${baloo.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-cream text-ink">
         {children}
