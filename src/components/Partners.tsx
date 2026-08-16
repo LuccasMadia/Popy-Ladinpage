@@ -1,6 +1,7 @@
 "use client";
 
-import { testimonials } from "@/lib/content";
+import { partners } from "@/lib/content";
+import { LogoLoop } from "@/components/LogoLoop";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export function Partners() {
@@ -15,18 +16,8 @@ export function Partners() {
         >
           Quem já é parceiro
         </h2>
-        <div data-reveal-stagger className="mt-14 grid gap-8 md:grid-cols-2">
-          {testimonials.map((item) => (
-            <blockquote
-              key={item.id}
-              className="rounded-2xl border-2 border-popy-green/20 bg-white p-8"
-            >
-              <p className="text-lg italic text-ink/80">&ldquo;{item.quote}&rdquo;</p>
-              <footer className="mt-4 text-sm font-semibold text-popy-green">
-                {item.author} — {item.business}
-              </footer>
-            </blockquote>
-          ))}
+        <div className="mt-14">
+          <LogoLoop items={partners} />
         </div>
       </div>
     </section>
