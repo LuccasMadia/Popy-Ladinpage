@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { flavors } from "@/lib/content";
+import { flavors, sizes } from "@/lib/content";
 import { useScrollReveal } from "@/lib/useScrollReveal";
 
 export function FlavorShowcase() {
@@ -76,6 +76,16 @@ export function FlavorShowcase() {
               >
                 <h3 className="font-display text-2xl text-cream">{flavor.name}</h3>
                 <p className="mt-2 text-sm text-cream/85">{flavor.description}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {sizes.map((size) => (
+                    <span
+                      key={size}
+                      className="rounded-full border border-cream/40 bg-cream/10 px-3 py-1 text-xs text-cream"
+                    >
+                      {size}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
