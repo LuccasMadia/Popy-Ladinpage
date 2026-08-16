@@ -13,13 +13,6 @@ export interface Differentiator {
   description: string;
 }
 
-export interface Testimonial {
-  id: string;
-  quote: string;
-  author: string;
-  business: string;
-}
-
 export interface Step {
   id: string;
   number: number;
@@ -82,21 +75,13 @@ export const differentiators: Differentiator[] = [
   },
 ];
 
-export const testimonials: Testimonial[] = [
-  {
-    id: "mercadinho-boa-vista",
-    quote:
-      "Desde que passamos a vender Popy, os clientes voltam só para levar mais garrafinhas. Virou item fixo na geladeira.",
-    author: "Renata Alves",
-    business: "Mercadinho Boa Vista",
-  },
-  {
-    id: "cafe-do-bairro",
-    quote:
-      "O sabor natural faz toda a diferença. É o suco que mais gira aqui na loja.",
-    author: "Diego Martins",
-    business: "Café do Bairro",
-  },
+export const partners = [
+  "Mercadinho Boa Vista",
+  "Café do Bairro",
+  "Empório Verde",
+  "Padaria Sol Nascente",
+  "Mercado Bom Preço",
+  "Lanchonete da Praça",
 ];
 
 export const steps: Step[] = [
